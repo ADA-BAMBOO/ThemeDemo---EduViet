@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c4c5d7",
+                        "surface": "#faf8ff",
+                        "on-background": "#1a1b23",
+                        "on-tertiary-fixed-variant": "#832700",
+                        "tertiary-fixed-dim": "#ffb59c",
+                        "on-primary-fixed": "#001551",
+                        "inverse-on-surface": "#f0f0fb",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-low": "#f3f2fe",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdf9f",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "inverse-primary": "#b7c4ff",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d9d9e5",
+                        "surface-container-high": "#e8e7f3",
+                        "on-primary-fixed-variant": "#0039b5",
+                        "primary-fixed": "#dce1ff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#ededf9",
+                        "outline": "#747686",
+                        "on-primary-container": "#cad3ff",
+                        "on-surface": "#1a1b23",
+                        "on-secondary-container": "#6f5100",
+                        "tertiary": "#7f2500",
+                        "secondary-container": "#ffc329",
+                        "inverse-surface": "#2e3039",
+                        "on-tertiary-container": "#ffc9b7",
+                        "on-tertiary-fixed": "#390c00",
+                        "on-error": "#ffffff",
+                        "primary": "#0037b0",
+                        "surface-container-highest": "#e2e1ed",
+                        "surface-variant": "#e2e1ed",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary": "#795900",
+                        "background": "#faf8ff",
+                        "surface-tint": "#2151da",
+                        "primary-container": "#1d4ed8",
+                        "tertiary-container": "#a73400",
+                        "tertiary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#b7c4ff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#261a00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(24px);
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,55,176,0.06)]">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] antialiased text-sm font-semibold tracking-tight">
+<div class="text-2xl font-extrabold tracking-tighter text-blue-700 dark:text-blue-400">EduViet</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" href="#">Courses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" href="#">Mentors</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" href="#">Pricing</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors" href="#">FAQ</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-slate-600 font-semibold hover:text-primary transition-colors cursor-pointer">Login</button>
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full hover:opacity-90 hover:scale-[1.02] transition-all duration-300 active:scale-95 cursor-pointer">Học thử miễn phí</button>
+</div>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-8 py-20 lg:py-32 max-w-7xl mx-auto">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="z-10">
+<div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full mb-8 shadow-sm">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-xs font-bold uppercase tracking-widest">50,000+ Students Already Enrolled</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-extrabold text-on-surface leading-[1.1] mb-6 tracking-tighter">
+                        Master the Art of <span class="text-primary italic">Digital Influence.</span>
+</h1>
+<p class="text-lg text-on-surface-variant mb-10 max-w-xl leading-relaxed">
+                        Become a top 1% marketer with career-focused tracks designed by industry giants. From SEO mastery to high-impact content strategy, your path to digital mastery starts here.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-primary text-white font-bold rounded-full shadow-lg hover:shadow-primary/20 hover:scale-[1.03] transition-all">Enroll Now</button>
+<button class="px-8 py-4 bg-surface-container-lowest text-primary font-bold rounded-full border border-outline-variant/30 hover:bg-surface-container-low transition-all">Học thử miễn phí</button>
+</div>
+</div>
+<div class="relative">
+<!-- Impact Visual -->
+<div class="relative rounded-xl overflow-hidden aspect-video shadow-2xl z-10">
+<img class="w-full h-full object-cover" data-alt="Modern bright co-working space with young diverse professionals collaborating around a large wooden table with laptops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsQl1t6XgURQCWkhItnIlGpCEAAuVjU2v_tOkSMAJ5yluQWde1r4fWGVwbuCsBFcOGfn1XvnDHZEDBP21dMB8ZoWOqqHq1wjXY_y146gtLilVbWJbhFMT-E-GJnWTmTOVC4SDFdxbFphGIDsJSgOKbX2h5SNmNrnH6X5ylDlEBXfIPBzUnBUlAslje8_wmD0xEpmwQibsfWGWoifWdbXnZ8KxvbL6jQtmcAgzMsq2IyUcYrJqUBF7SxENtdYUS6z7PXLZmGypLjZb2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<!-- Progress Orbital Overlay -->
+<div class="absolute -bottom-10 -left-10 z-20 bg-white p-6 rounded-lg shadow-xl flex items-center gap-4">
+<div class="relative w-16 h-16">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<circle class="stroke-secondary-fixed stroke-[3px]" cx="18" cy="18" fill="none" r="16"></circle>
+<circle class="stroke-secondary stroke-[3px]" cx="18" cy="18" fill="none" r="16" stroke-dasharray="75, 100" stroke-linecap="round"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-sm">75%</div>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-tighter">Course Progress</p>
+<p class="text-sm font-extrabold">SEO Fundamentals</p>
+</div>
+</div>
+<!-- Decorative elements -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+</div>
+</div>
+</section>
+<!-- Course Highlights (Bento-ish Grid) -->
+<section class="bg-surface-container-low py-24 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl lg:text-4xl font-extrabold tracking-tight mb-2">Featured Learning Paths</h2>
+<p class="text-on-surface-variant">Accelerate your career with our top-rated marketing courses.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">View All Courses <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="h-52 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Digital marketing analytics dashboard on a clean laptop screen with soft bokeh background office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvxp-jBE5koBMQ4_IyxcJ3xXTyw6MzEtMXG5mzuA5H_K-0y2jrtFpBqG68riUOs6Z8PKOmpE4C3CAQ8oRHXnn4VeQKBLrGXiLkbV0u8T93891tlV0b14jLyexcczLQynfJNpFc0tOb8EOFSUQZ8agZWxBUQ2ITmn_SXTwNI9eVkZaZ64L6xQyQQMavaBxPyQNtpn3_Z062uassAcn56UBziCDwJVvSvSPd0yR9-oJlczeERK1P_hP0W3EiiRbatYnTrV6c5seICeh8"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Bestseller</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">4.9 (12.4k reviews)</span>
+</div>
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">SEO Mastery: Rank #1</h3>
+<p class="text-sm text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span> By Alex Stanton
+                                <span class="mx-2">•</span>
+<span class="material-symbols-outlined text-sm">schedule</span> 24h Course
+                            </p>
+<div class="flex justify-between items-center pt-4 border-t border-surface-container">
+<span class="text-2xl font-extrabold text-primary">$199</span>
+<button class="p-2 bg-secondary-container text-on-secondary-container rounded-full hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="h-52 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Colorful social media application icons floating on a sleek digital interface background with neon accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXvY9jknHq62t62aAy3bHOLqEpCNWO3iBSw2w62tJb_Yq21nBJxI_Rr9wgIhZvMq32xWg9KyGZZ2PKPFduiMSi1cDpoolLoAAFve_364JU_PDWbWjDp5AW1oiNvS_Z_mhJVKvq3VWZOjjERpiHUk5jiCKmDuZB444kbXm3h3j0miBjyADxjt8RXIZVLk1UNz1KjsVOLbEPC3JPhXIAZvfG-0CMeDfE1M67I1TKToqGpGNl-zk67F3tq2_i8fNpmx5GWOzEcuf0Sr3E"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">4.8 (8.1k reviews)</span>
+</div>
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Social Media Marketing</h3>
+<p class="text-sm text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span> By Sarah Nguyen
+                                <span class="mx-2">•</span>
+<span class="material-symbols-outlined text-sm">schedule</span> 18h Course
+                            </p>
+<div class="flex justify-between items-center pt-4 border-t border-surface-container">
+<span class="text-2xl font-extrabold text-primary">$149</span>
+<button class="p-2 bg-secondary-container text-on-secondary-container rounded-full hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden group hover:shadow-xl transition-all duration-500">
+<div class="h-52 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a notebook and coffee on a desk with a screen showing content creation workflow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDz2Ih4AHw5LIdwKrqpCtuUZnB8NJBRnrjMc2OIa2nXCtJXLYVIRtKXAWv6tqcnpANmmx9RWRFLAL8yxXDXJRNqvDbXS4B9dwfTOR0DhN2jx3ZhFBoTMEcIGlES6Mms2nveg4Kh8R6EFl7ZIylM8SM3GWswY19JJlh1sVvWZLxHWAUlFy7AEqWM6WUniWd6xxS4KQcOpVuXzpVvMsAi-Hk4YGNGLL62yop4AqWdiBgJ7MTQSktOMcnHpYEJk9yhtxP55oj3n_87JA6f"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">New</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-2 mb-3">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs font-bold text-on-surface-variant">5.0 (2.5k reviews)</span>
+</div>
+<h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Content Strategy 2.0</h3>
+<p class="text-sm text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">person</span> By Marcus Chen
+                                <span class="mx-2">•</span>
+<span class="material-symbols-outlined text-sm">schedule</span> 32h Course
+                            </p>
+<div class="flex justify-between items-center pt-4 border-t border-surface-container">
+<span class="text-2xl font-extrabold text-primary">$249</span>
+<button class="p-2 bg-secondary-container text-on-secondary-container rounded-full hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl lg:text-5xl font-extrabold tracking-tighter mb-4">Redefining Digital Education</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">We don't just teach theory; we provide the tools, network, and guidance to build a real-world career in the digital landscape.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="p-8 rounded-lg bg-surface-container transition-all hover:-translate-y-2">
+<div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Expert Mentors</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Learn from practitioners currently working at top global agencies and tech firms.</p>
+</div>
+<div class="p-8 rounded-lg bg-surface-container-high transition-all hover:-translate-y-2">
+<div class="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined text-3xl">update</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Lifetime Access</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Enroll once, own forever. Stay updated with free course updates for life.</p>
+</div>
+<div class="p-8 rounded-lg bg-surface-container transition-all hover:-translate-y-2">
+<div class="w-14 h-14 bg-tertiary-container rounded-lg flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Practical Projects</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Apply your skills on real business cases and live advertising budgets.</p>
+</div>
+<div class="p-8 rounded-lg bg-surface-container-high transition-all hover:-translate-y-2">
+<div class="w-14 h-14 bg-primary-container rounded-lg flex items-center justify-center text-white mb-6">
+<span class="material-symbols-outlined text-3xl">verified</span>
+</div>
+<h4 class="text-lg font-bold mb-3">Certificate of Completion</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Earn industry-recognized certificates verified by our global network.</p>
+</div>
+</div>
+</section>
+<!-- Instructor Profile (Asymmetric Layout) -->
+<section class="py-24 bg-primary text-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 relative">
+<div class="absolute -top-12 -left-12 w-48 h-48 bg-secondary-container/10 rounded-full blur-2xl"></div>
+<div class="relative z-10 rounded-xl overflow-hidden shadow-2xl border-4 border-white/10">
+<img class="w-full h-auto aspect-[4/5] object-cover" data-alt="Professional portrait of a confident female marketing executive in a modern office, warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhOmhhvp3gTqG4-3ibeDOzZxwjaau7-myUTcQ8VGXjuAx3wWQddn60xOxewhcqpY7dG1w1Oc17b35gRm16rAf5jfy-zOIJ4jZcBqNqmGiGxD14t3z8bi_z3bSNugRvasOd2w5brVbhNwduSHqQxMkjriSCl94o-X1461mmVyUMkpnbhImL_pKqrVC_BHSBSwvfh_gq9mbUc9tFkI5wkOHp2YAjKoIYACT55sv1TJMZVCuum-IaHnxn_lQpoAHQ2WBl_h4Yt5lbWIfZ"/>
+</div>
+</div>
+<div class="lg:col-span-7">
+<h2 class="text-4xl lg:text-6xl font-extrabold tracking-tighter mb-6 leading-tight">Learn from the <span class="text-secondary-container">Best in the Industry.</span></h2>
+<p class="text-xl text-primary-fixed mb-8 leading-relaxed max-w-2xl">
+                        Meet Sarah Nguyen, a 15-year veteran in Performance Marketing who has managed over $50M in ad spend for Fortune 500 companies. She leads our Social Media track with a focus on ROI.
+                    </p>
+<div class="flex items-center gap-6 mb-10">
+<div>
+<p class="text-3xl font-extrabold">15+</p>
+<p class="text-xs font-bold uppercase tracking-widest text-primary-fixed">Years Exp</p>
+</div>
+<div class="w-px h-10 bg-white/20"></div>
+<div>
+<p class="text-3xl font-extrabold">200k+</p>
+<p class="text-xs font-bold uppercase tracking-widest text-primary-fixed">Graduates</p>
+</div>
+<div class="w-px h-10 bg-white/20"></div>
+<div>
+<p class="text-3xl font-extrabold">98%</p>
+<p class="text-xs font-bold uppercase tracking-widest text-primary-fixed">Success Rate</p>
+</div>
+</div>
+<button class="px-8 py-4 bg-secondary-container text-on-secondary-container font-bold rounded-full hover:scale-105 transition-all">Meet All Mentors</button>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 px-8 max-w-7xl mx-auto">
+<h2 class="text-center text-3xl font-extrabold mb-16">Voices of Success</h2>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="p-8 bg-surface rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.03)] border border-surface-container-high relative">
+<span class="material-symbols-outlined text-5xl text-secondary-container absolute -top-4 left-6 opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-on-surface-variant italic mb-8 relative z-10 leading-relaxed">
+                        "The Practical Projects were a game changer. I managed a real campaign and used the results to land my current role at a top agency. EduViet is worth every penny!"
+                    </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Headshot of a smiling young man in creative studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmhDEMQJIF8ihZ1sYHSALYgF37vohusZZNdbIlCLyeWvPa4xDlsirs820U47N9HsT4OtvQWb_Wqum4hel1gVPvHi3e0JhUvI4kQ4p2crIPOXkIBIG-F0F_yIpA4ih1vu3u5b9kbx6_hD9J3iDyPAPXEaQe-0mEatIKb-ZWdvdVEoCZPQwUZqOxiy4KNAnSb1Ht7wnFn9NMoM8q7WSFXjOeZuT8HB-m3oFwZzTQWtV6X9UwU60kZL4lScf3g0675Al1Rh2m8NlwvWJ8"/>
+<div>
+<p class="font-bold">David Pham</p>
+<p class="text-xs text-on-surface-variant">Marketing Analyst, FinTech</p>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.03)] border border-surface-container-high relative">
+<span class="material-symbols-outlined text-5xl text-secondary-container absolute -top-4 left-6 opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-on-surface-variant italic mb-8 relative z-10 leading-relaxed">
+                        "The mentors are so accessible. I got direct feedback on my content strategy from someone I've followed for years. Truly an elite learning experience."
+                    </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a professional woman with a bright background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBmgaByt4jl59d_NESVU_rgMtDKAexJCTg7zYhXVDw20To1FPqNprmnQo8mD-Iw61RcmfzKEUMphAzAlB1fORT2hD-QidRxtZttOruMEVs6K--cdUEAQIGIpP1vZ4YUdG9WpIT-SULChiqN93edGuNl0-HfKI7ONOTw9muB1VbJNb3qIxrw8ovsiXc8GGwAjaq1IOMS5I1yfcZkp8z0kHys5vUVXcnCaHhemAKLCSsvDaeSrx0EuWW42v9KD-RZmdN-YyPsyxRJGyy"/>
+<div>
+<p class="font-bold">Hana Tran</p>
+<p class="text-xs text-on-surface-variant">Freelance Content Creator</p>
+</div>
+</div>
+</div>
+<div class="p-8 bg-surface rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.03)] border border-surface-container-high relative">
+<span class="material-symbols-outlined text-5xl text-secondary-container absolute -top-4 left-6 opacity-30" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<p class="text-on-surface-variant italic mb-8 relative z-10 leading-relaxed">
+                        "I switched careers from finance to digital marketing in just 6 months. The curriculum is perfectly structured for career pivoters."
+                    </p>
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of a man in casual attire smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrZaWaGWR6f36SYqZpN_HncT9qVpcnaFTnt6_JSbQ4PvdMN0Fe2XyldOFBglxyHTc3-UuhxReNG-r1ejpmKSbqPKU2Vc2ouMp3_w8aFVisD5Jk_g_ArebsdkSqlSsStfDnV7inLsHGgdOrwQBmM2Em3zZs5cIWqfJZH3dcsZ1vVOaBBT8Jr4MvDRmNnDeOgQP-DjTqlF-XtwkZ0TECEAFFQR9Bx0SUIccQWHDz3GIdM_doMJrXmhES9XC1dg9yz5u1uRWlxXXAGOLj"/>
+<div>
+<p class="font-bold">Kevin Vu</p>
+<p class="text-xs text-on-surface-variant">Social Media Manager</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 bg-surface-container-low px-8">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold tracking-tighter mb-4">Choose Your Growth Plan</h2>
+<p class="text-on-surface-variant">Flexible options for individual learners and teams.</p>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<!-- Basic -->
+<div class="bg-surface-container-lowest p-10 rounded-lg border border-transparent flex flex-col">
+<h4 class="text-lg font-bold mb-2">Basic</h4>
+<p class="text-on-surface-variant text-sm mb-6">Foundational knowledge for beginners.</p>
+<div class="mb-8">
+<span class="text-4xl font-extrabold">$49</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> 10 Core Courses
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> Community Access
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> Certificate of Completion
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all">Get Started</button>
+</div>
+<!-- Pro -->
+<div class="bg-surface-container-lowest p-10 rounded-lg border-2 border-primary relative flex flex-col scale-105 shadow-2xl z-10">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Most Popular</div>
+<h4 class="text-lg font-bold mb-2">Pro</h4>
+<p class="text-on-surface-variant text-sm mb-6">For serious career growth.</p>
+<div class="mb-8">
+<span class="text-4xl font-extrabold">$99</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> All Courses &amp; Tracks
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> 1-on-1 Mentor Office Hours
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> Job Placement Support
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> Expert Content Reviews
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-full bg-primary text-white font-bold hover:opacity-90 transition-all">Upgrade to Pro</button>
+</div>
+<!-- Premium -->
+<div class="bg-surface-container-lowest p-10 rounded-lg border border-transparent flex flex-col">
+<h4 class="text-lg font-bold mb-2">Premium</h4>
+<p class="text-on-surface-variant text-sm mb-6">The ultimate masterclass experience.</p>
+<div class="mb-8">
+<span class="text-4xl font-extrabold">$199</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> Priority Access to Workshops
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> Personalized Career Roadmap
+                            </li>
+<li class="flex items-center gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-primary text-xl">check_circle</span> Private Networking Events
+                            </li>
+</ul>
+<button class="w-full py-3 rounded-full border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all">Contact Sales</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 px-8 max-w-4xl mx-auto">
+<h2 class="text-center text-3xl font-extrabold mb-16">Frequently Asked Questions</h2>
+<div class="space-y-6">
+<div class="bg-surface p-6 rounded-lg shadow-sm">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-bold text-lg">Do I need prior experience to start?</span>
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="bg-surface-container p-6 rounded-lg shadow-sm border border-primary/20">
+<button class="w-full flex justify-between items-center text-left mb-4">
+<span class="font-bold text-lg">Are the certificates recognized?</span>
+<span class="material-symbols-outlined">remove</span>
+</button>
+<p class="text-on-surface-variant text-sm leading-relaxed">Yes! EduViet certificates are recognized by leading digital agencies and tech companies across Southeast Asia. You can also add them directly to your LinkedIn profile.</p>
+</div>
+<div class="bg-surface p-6 rounded-lg shadow-sm">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-bold text-lg">Can I cancel my subscription anytime?</span>
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="bg-surface p-6 rounded-lg shadow-sm">
+<button class="w-full flex justify-between items-center text-left">
+<span class="font-bold text-lg">Is there a refund policy?</span>
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+<div class="md:col-span-1">
+<span class="text-xl font-bold text-blue-700 dark:text-blue-400 mb-4 block">EduViet</span>
+<p class="text-slate-500 dark:text-slate-400 mb-6">Empowering the next generation of digital leaders through high-impact education.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">social_leaderboard</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">linked_camera</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined text-lg">share</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Explore</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">About Us</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">Courses</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">Mentors</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Support</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">Help Center</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-yellow-500 transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 text-on-surface">Newsletter</h5>
+<p class="text-slate-500 dark:text-slate-400 mb-4 text-xs">Stay updated with marketing trends and course discounts.</p>
+<div class="relative focus-within:ring-2 focus-within:ring-blue-500 rounded-lg">
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-3 text-sm" placeholder="Email address" type="email"/>
+<button class="absolute right-2 top-1.5 p-1.5 bg-primary text-white rounded-md">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-16 pt-8 border-t border-surface-container flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
+<p>© 2024 EduViet. All Rights Reserved. Developed by BBOTech</p>
+<div class="flex gap-8">
+<span>Designed for Impact</span>
+<span>EduViet Academy</span>
+</div>
+</div>
+</footer>
+</body></html>
